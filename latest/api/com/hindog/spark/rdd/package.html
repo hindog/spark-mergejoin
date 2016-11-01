@@ -1,0 +1,206 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>rdd - com.hindog.spark.rdd</title>
+          <meta name="description" content="rdd - com.hindog.spark.rdd" />
+          <meta name="keywords" content="rdd com.hindog.spark.rdd" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.hindog.spark.rdd.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.hindog">hindog</a>.<a href="../package.html" class="extype" name="com.hindog.spark">spark</a></p>
+        <h1>rdd</h1><span class="permalink">
+      <a href="../../../../index.html#com.hindog.spark.rdd.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rdd</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Spark merge-join capability for RDDs. See <a href="PairRDDFunctions.html" class="extype" name="com.hindog.spark.rdd.PairRDDFunctions">com.hindog.spark.rdd.PairRDDFunctions</a> for further documentation
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.hindog.spark.rdd"><span>rdd</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.hindog.spark.rdd.MergeJoinPartition" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MergeJoinPartition[K,V,W]extendsPartitionwithProductwithSerializable"></a>
+      <a id="MergeJoinPartition[K,V,W]:MergeJoinPartition[K,V,W]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MergeJoinPartition.html"><span class="name">MergeJoinPartition</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>, <span name="W">W</span>]</span><span class="params">(<span name="index">index: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="left">left: <span class="extype" name="org.apache.spark.Dependency">Dependency</span>[(<span class="extype" name="com.hindog.spark.rdd.MergeJoinPartition.K">K</span>, <span class="extype" name="com.hindog.spark.rdd.MergeJoinPartition.V">V</span>)]</span>, <span name="right">right: <span class="extype" name="org.apache.spark.Dependency">Dependency</span>[(<span class="extype" name="com.hindog.spark.rdd.MergeJoinPartition.K">K</span>, <span class="extype" name="com.hindog.spark.rdd.MergeJoinPartition.W">W</span>)]</span>)</span><span class="result"> extends <span class="extype" name="org.apache.spark.Partition">Partition</span> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.hindog.spark.rdd.package@MergeJoinPartition[K,V,W]extendsPartitionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">:: @DeveloperApi ::</p><div class="fullcomment"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>Stores partition index and references to left and right partitions to be joined
+</p></div><dl class="paramcmts block"><dt class="param">index</dt><dd class="cmt"><p>The partition index</p></dd><dt class="param">left</dt><dd class="cmt"><p>The left Dependency to be used in the join</p></dd><dt class="param">right</dt><dd class="cmt"><p>The right Dependency to be used in the join</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="com.hindog.spark.rdd.MergeJoinRDD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MergeJoinRDD[K,V,W,Out]extendsRDD[Out]"></a>
+      <a id="MergeJoinRDD[K,V,W,Out]:MergeJoinRDD[K,V,W,Out]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MergeJoinRDD.html"><span class="name">MergeJoinRDD</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>, <span name="W">W</span>, <span name="Out">Out</span>]</span><span class="result"> extends <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="com.hindog.spark.rdd.MergeJoinRDD.Out">Out</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.hindog.spark.rdd.package@MergeJoinRDD[K,V,W,Out]extendsRDD[Out]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">:: @DeveloperApi ::</p><div class="fullcomment"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>RDD implementation for merge-join that uses a shuffle to partition and sort by keys using an implicit <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.package@Ordering[T]=scala.math.Ordering[T]" class="extype" target="_top">Ordering[K</a>] for keys,
+and then delegates to an instance of <a href="../../../../org/apache/spark/rdd/mergejoin/MergeJoin.html" class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin">MergeJoin</a> to perform the actual merge logic.</p><p>There is an optimization in place to avoid a shuffle in some cases where <code>left</code> or <code>right</code> are guaranteed to be partition-sorted already (ie: via <code>repartitionAndSortWithinPartitions</code>)
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@DeveloperApi</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="com.hindog.spark.rdd.PairRDDFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PairRDDFunctions[K,V]extendsSerializable"></a>
+      <a id="PairRDDFunctions[K,V]:PairRDDFunctions[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PairRDDFunctions.html"><span class="name">PairRDDFunctions</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.hindog.spark.rdd.package@PairRDDFunctions[K,V]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Merge-join operators that provide equivalent results to existing Spark RDD <code>join</code>, <code>leftOuterJoin</code>, <code>rightOuterJoin</code>, <code>fullOuterJoin</code> operators
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.hindog.spark.rdd#toPairRDDFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toPairRDDFunctions[K,V](rdd:org.apache.spark.rdd.RDD[(K,V)])(implicitevidence$1:scala.reflect.ClassTag[K],implicitevidence$2:scala.reflect.ClassTag[V]):com.hindog.spark.rdd.PairRDDFunctions[K,V]"></a>
+      <a id="toPairRDDFunctions[K,V](RDD[(K,V)])(ClassTag[K],ClassTag[V]):PairRDDFunctions[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toPairRDDFunctions</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="rdd">rdd: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[(<span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.K">K</span>, <span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.V">V</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.K">K</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.V">V</span>]</span>)</span><span class="result">: <a href="PairRDDFunctions.html" class="extype" name="com.hindog.spark.rdd.PairRDDFunctions">PairRDDFunctions</a>[<span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.K">K</span>, <span class="extype" name="com.hindog.spark.rdd.toPairRDDFunctions.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.hindog.spark.rdd.package@toPairRDDFunctions[K,V](rdd:org.apache.spark.rdd.RDD[(K,V)])(implicitevidence$1:scala.reflect.ClassTag[K],implicitevidence$2:scala.reflect.ClassTag[V]):com.hindog.spark.rdd.PairRDDFunctions[K,V]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

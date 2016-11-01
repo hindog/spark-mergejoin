@@ -1,0 +1,151 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>mergejoin - org.apache.spark.rdd.mergejoin</title>
+          <meta name="description" content="mergejoin - org.apache.spark.rdd.mergejoin" />
+          <meta name="keywords" content="mergejoin org.apache.spark.rdd.mergejoin" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.apache.spark.rdd.mergejoin.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.spark">spark</a>.<a href="../package.html" class="extype" name="org.apache.spark.rdd">rdd</a></p>
+        <h1>mergejoin</h1><span class="permalink">
+      <a href="../../../../../index.html#org.apache.spark.rdd.mergejoin.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mergejoin</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.spark.rdd.mergejoin.MergeJoin" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MergeJoin[K,V,W,O]extendsIterator[O]"></a>
+      <a id="MergeJoin[K,V,W,O]:MergeJoin[K,V,W,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MergeJoin.html"><span class="name">MergeJoin</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>, <span name="W">W</span>, <span name="O">O</span>]</span><span class="result"> extends <span class="extype" name="scala.Iterator">Iterator</span>[<span class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin.O">O</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.apache.spark.rdd.mergejoin.package@MergeJoin[K,V,W,O]extendsIterator[O]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">:: DeveloperApi ::</p><div class="fullcomment"><div class="comment cmt"><p>:: DeveloperApi ::</p><p>Merge-join implementation that will create a spill-able collection for the right-side to be iterated over
+for each matching key on the left side.  This enables joins that don't require that values for any
+given key to be required to fit in memory, but it *will* try to buffer as many values as possible using
+Spark's built-in 'ExternalSorter', and it's a private class so that's why this class is packaged here.</p><p>There are numerous optimizations in place to try to minimize the work being done in the join:</p><p> 1) Since the 'Joiner' returns a value Iterator for each key, we don't need to consult perform join logic on each
+   value iteration-- instead we perform join logic for each unique key.  This also allows each 'Joiner' to
+   optimize via the methods below based on the join being performed.</p><p> 2) In cases were we have a key on one side but not the other, we skip creation of the spillable collection
+   and write the tuples directly according to the <a href="MergeJoin$$Joiner.html" class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin.Joiner">Joiner</a>'s <code>leftOuter</code>/<code>rightOuter</code><code>' method.</code></p><p> 3) In cases where there are no values to emit for a particular key, the 'Joiner' can emit an empty Iterator
+   for that case and we will immediately move to the next key without emitting+filtering tuples for those values</p><p> 4) In cases where we have a key on both sides (ie: 'inner'), we create a spill-able collection for the right
+   side that will buffer as many values as possible in memory before spilling to disk so we only pay the
+   penalty for spilling to disk on keys where it is absolutely necessary.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@DeveloperApi</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.apache.spark.rdd.mergejoin.MergeJoin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MergeJoin"></a>
+      <a id="MergeJoin:MergeJoin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MergeJoin$.html"><span class="name">MergeJoin</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.apache.spark.rdd.mergejoin.package@MergeJoin" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
