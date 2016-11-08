@@ -123,13 +123,13 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">:: @DeveloperApi ::</p><div class="fullcomment"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>RDD implementation for merge-join that uses a shuffle to partition and sort by keys using an implicit <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.package@Ordering[T]=scala.math.Ordering[T]" class="extype" target="_top">Ordering[K</a>] for keys,
+      <p class="shortcomment cmt">:: @DeveloperApi ::</p><div class="fullcomment"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>RDD implementation for merge-join that uses a shuffle to partition and sort by keys using an implicit <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.package@Ordering[T]=scala.math.Ordering[T]" class="extype" target="_top">Ordering</a> for <code>K</code>,
 and then delegates to an instance of <a href="../../../../org/apache/spark/rdd/mergejoin/MergeJoin.html" class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin">MergeJoin</a> to perform the actual merge logic.</p><p>There is an optimization in place to avoid a shuffle in some cases where <code>left</code> or <code>right</code> are guaranteed to be partition-sorted already (ie: via <code>repartitionAndSortWithinPartitions</code>)
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@DeveloperApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.hindog.spark.rdd.PairRDDFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.hindog.spark.rdd.PairRDDFunctions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PairRDDFunctions[K,V]extendsSerializable"></a>
       <a id="PairRDDFunctions[K,V]:PairRDDFunctions[K,V]"></a>
       <h4 class="signature">
@@ -145,8 +145,7 @@ and then delegates to an instance of <a href="../../../../org/apache/spark/rdd/m
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Merge-join operators that provide equivalent results to existing Spark RDD <code>join</code>, <code>leftOuterJoin</code>, <code>rightOuterJoin</code>, <code>fullOuterJoin</code> operators
-</p>
+      <p class="shortcomment cmt">Merge-join operators that provide scalable equivalents to the existing Spark RDD <code>join</code>, <code>leftOuterJoin</code>, <code>rightOuterJoin</code>, <code>fullOuterJoin</code> operators.</p><div class="fullcomment"><div class="comment cmt"><p>Merge-join operators that provide scalable equivalents to the existing Spark RDD <code>join</code>, <code>leftOuterJoin</code>, <code>rightOuterJoin</code>, <code>fullOuterJoin</code> operators.</p><p>Refer to the documentation for <a href="../../../../org/apache/spark/rdd/mergejoin/MergeJoin.html" class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin">MergeJoin</a> for implementation details.</p></div></div>
     </li></ol>
             </div>
 

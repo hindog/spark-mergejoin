@@ -49,7 +49,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>RDD implementation for merge-join that uses a shuffle to partition and sort by keys using an implicit <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.package@Ordering[T]=scala.math.Ordering[T]" class="extype" target="_top">Ordering[K</a>] for keys,
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>:: @DeveloperApi ::</p><p>RDD implementation for merge-join that uses a shuffle to partition and sort by keys using an implicit <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.package@Ordering[T]=scala.math.Ordering[T]" class="extype" target="_top">Ordering</a> for <code>K</code>,
 and then delegates to an instance of <a href="../../../../org/apache/spark/rdd/mergejoin/MergeJoin.html" class="extype" name="org.apache.spark.rdd.mergejoin.MergeJoin">MergeJoin</a> to perform the actual merge logic.</p><p>There is an optimization in place to avoid a shuffle in some cases where <code>left</code> or <code>right</code> are guaranteed to be partition-sorted already (ie: via <code>repartitionAndSortWithinPartitions</code>)
 </p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@DeveloperApi</span><span class="args">()</span>
