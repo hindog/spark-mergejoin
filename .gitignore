@@ -1,0 +1,71 @@
+# use glob syntax.
+syntax: glob
+*.ser
+*.class
+*~
+*.bak
+#*.off
+*.old
+
+# vim
+tags
+*.swp
+
+#jrebel files - usually local dirs
+rebel.xml
+
+# eclipse conf file
+.settings
+.classpath
+.project
+.manager
+.scala_dependencies
+
+# idea
+.idea
+*.iml
+*.ipr
+*.iws
+atlassian-ide-plugin.xml
+
+.ensime*
+.history
+*.log
+cscope*
+.cache
+
+# building
+target
+build
+null
+tmp*
+dist
+test-output
+build.log
+out
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# switch to regexp syntax.
+#  syntax: regexp
+#  ^\.pc/
+
+# ext designer output--trying to be specific with the directory
+designer.html
+designer.js
+designer_includeOrder.txt
+ext-all-debug.js
+
+#Apple Stuff
+.DS_Store
+
+# Local lib
+/lib/
+
+metastore_db
+system.log.*
+
+.vagrant/
