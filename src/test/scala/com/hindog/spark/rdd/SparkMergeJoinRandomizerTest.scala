@@ -30,7 +30,7 @@ class SparkMergeJoinRandomizerTest extends FunSuite with SharedSparkContext {
 			sb.append(s"$name: RDD[${implicitly[ClassTag[T]].runtimeClass.getSimpleName}]\n")
 			sb.append(s"-------- Lineage -----------\n")
 			sb.append(rdd.toDebugString + "\n")
-			sb.append(s"-------- Partitions [${rdd.getNumPartitions}]---------\n")
+			sb.append(s"-------- Partitions [${rdd.partitions.length}]---------\n")
 			sb.append(rdd.partitions.foreach(p => sb.append(p + "\n")) + "\n")
 			sb.append("--------- Data --------------\n")
 			res.foreach(v => sb.append(v + "\n"))

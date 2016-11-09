@@ -210,7 +210,7 @@ object MergeJoin {
 			currentKey = key
 
 			val rightSpillable = {
-				currentSpillable = new ExternalSorter[Int, W, W](context, None, None, Some(implicitly[Ordering[Int]]))
+				currentSpillable = new ExternalSorter[Int, W, W](None, None, Some(implicitly[Ordering[Int]]))
 				currentSpillable.insertAll(new InterruptibleIterator(context, right.zipWithIndex.map(_.swap)))
 
 				new Iterable[W] {

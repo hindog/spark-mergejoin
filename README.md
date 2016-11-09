@@ -41,7 +41,7 @@ This library has different versions based on the Spark version used due to chang
 |---------------|-----------------|
 | 2.0.x | 2.0.0 |
 | 1.6.x | 1.6.0 |
-
+| 1.5.x | 1.5.0 |
 
 ### For Spark 2.0
 

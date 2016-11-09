@@ -4,7 +4,7 @@ git.remoteRepo := "git@github.com:hindog/spark-mergejoin.git"
 
 enablePlugins(SiteScaladocPlugin)
 
-lazy val sparkVersion = "1.6.2"
+lazy val sparkVersion = "1.5.2"
 
 lazy val root = Project(
 	id = "root",
