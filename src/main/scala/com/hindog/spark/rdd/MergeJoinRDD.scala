@@ -73,7 +73,7 @@ class MergeJoinRDD[K: ClassTag, V: ClassTag, W: ClassTag, Out: ClassTag](
 			if (isNarrow(rdd)) {
 				new OneToOneDependency[(K, C)](rdd)
 			} else {
-				new ShuffleDependency[K, C, C](rdd, part, serializer.getOrElse(SparkEnv.get.serializer), Some(ord))
+				new ShuffleDependency[K, C, C](rdd, part, serializer, Some(ord))
 			}
 		}
 

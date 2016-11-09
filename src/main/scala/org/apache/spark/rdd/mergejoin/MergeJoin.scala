@@ -1,7 +1,7 @@
 package org.apache.spark.rdd.mergejoin
 
 import org.apache.spark.annotation.DeveloperApi
-import org.apache.spark.internal.Logging
+import org.apache.spark.Logging
 import org.apache.spark.serializer.Serializer
 import org.apache.spark.util.CompletionIterator
 import org.apache.spark.util.collection.ExternalSorter
