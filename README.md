@@ -157,7 +157,7 @@ fullJoined.collect.foreach(println)
 #### SparkConf Options
 
 | Key | Type | Default | Description |
-|-----|-------|-------------|
+|-----|-------|-------------|--------|
 | `spark.mergejoin.includeSpillMetrics` | `Boolean` | `true` | Whether to also include bytes spilled to memory/disk while performing the join to each task's metrics.  Set this to `false` if you don't want to include these metrics.
 
 
