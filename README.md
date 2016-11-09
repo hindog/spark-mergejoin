@@ -101,7 +101,8 @@ import com.hindog.spark.rdd._
 ```
 #### Operators
 
-Here is a table that shows a list of Spark's standard join operators and their corresponding merge-join operator provided by this library:
+The table below lists each of the standard join operators available for type `RDD[(K, V)]` and their corresponding merge-join operator provided by this library.  **One additional requirement for the merge-join operators is that an implicit **`Ordering[K]`** must be in scope.**
+
 
 | Standard Join | Merge-Join Equivalent |
 |---------------|----------------------|
@@ -110,7 +111,7 @@ Here is a table that shows a list of Spark's standard join operators and their c
 | `rightOuterJoin` | `rightOuterMergeJoin` |
 | `fullOuterJoin` | `fullOuterMergeJoin` |
 
-See the [API docs](https://hindog.github.io/spark-mergejoin/latest/api/#com.hindog.spark.rdd.PairRDDFunctions) for full documentation of these operators.
+For further documentation, refer to the [API docs](https://hindog.github.io/spark-mergejoin/latest/api/#com.hindog.spark.rdd.PairRDDFunctions).
 
 #### Example
 Here is an example demonstrating some joins using sample data:
@@ -159,8 +160,7 @@ fullJoined.collect.foreach(println)
 
 | Key | Type | Default | Description |
 |-----|-------|-------------|--------|
-| `spark.mergejoin.includeSpillMetrics` | `Boolean` | `true` | Whether to also include bytes spilled to memory/disk while performing the join to each task's metrics.  Set this to `false` if you don't want to include these metrics.
-
+| `spark.mergejoin.includeSpillMetrics` | `Boolean` | `true` | Whether to include bytes spilled to memory/disk while performing the join to each task's metrics **in addition** to the standard task metrics.  Set this to `false` if you don't want to add these metrics to the standard task metrics.
 
 ## Implementation Details
 
