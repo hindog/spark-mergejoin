@@ -49,7 +49,7 @@ This library has different versions based on the Spark version used due to chang
 Using SBT:
 
 ```
-libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "2.0.0"
+libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "2.0.1"
 ```
 
 Using Maven:
@@ -58,7 +58,7 @@ Using Maven:
 <dependency>
     <groupId>com.hindog.spark</groupId>
     <artifactId>spark-mergejoin_2.11</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
 </dependency>
 ```
 
@@ -67,7 +67,7 @@ Using Maven:
 Using SBT:
 
 ```
-libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "1.6.0"
+libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "1.6.1"
 ```
 
 Using Maven:
@@ -76,7 +76,7 @@ Using Maven:
 <dependency>
     <groupId>com.hindog.spark</groupId>
     <artifactId>spark-mergejoin_2.11</artifactId>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
 </dependency>
 ```
 
