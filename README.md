@@ -44,12 +44,12 @@ This library has different versions based on the Spark version used due to chang
 | 1.5.x | 1.5.1 |
 
 
-### For Spark 2.0
+### For Spark 2.x
 
 Using SBT:
 
 ```
-libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "2.0.0"
+libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "2.0.1"
 ```
 
 Using Maven:
@@ -58,7 +58,7 @@ Using Maven:
 <dependency>
     <groupId>com.hindog.spark</groupId>
     <artifactId>spark-mergejoin_2.11</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
 </dependency>
 ```
 
@@ -67,7 +67,7 @@ Using Maven:
 Using SBT:
 
 ```
-libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "1.6.0"
+libraryDependencies += "com.hindog.spark" %% "spark-mergejoin" % "1.6.1"
 ```
 
 Using Maven:
@@ -76,7 +76,7 @@ Using Maven:
 <dependency>
     <groupId>com.hindog.spark</groupId>
     <artifactId>spark-mergejoin_2.11</artifactId>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
 </dependency>
 ```
 
@@ -86,7 +86,7 @@ This library can also be added to Spark jobs launched through `spark-shell` or `
 For example, to include it when starting the spark shell:
 
 ```
-$ bin/spark-shell --packages com.hindog.spark:spark-mergejoin_2.11:2.0.0
+$ bin/spark-shell --packages com.hindog.spark:spark-mergejoin_2.11:2.0.1
 ```
 
 Unlike using `--jars`, using `--packages` ensures that this library and its dependencies will be added to the classpath. The `--packages` argument can also be used with `bin/spark-submit`.
