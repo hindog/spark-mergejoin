@@ -1,10 +1,10 @@
+import sbtsparkpackage.SparkPackagePlugin.autoImport.sparkVersion
+
 ghpages.settings
 
 git.remoteRepo := "git@github.com:hindog/spark-mergejoin.git"
 
 enablePlugins(SiteScaladocPlugin)
-
-lazy val sparkVersion = "1.5.2"
 
 lazy val root = Project(
 	id = "root",
@@ -14,18 +14,25 @@ lazy val root = Project(
 		organization := "com.hindog.spark",
 		moduleName := "spark-mergejoin",
 		name := "spark-mergejoin",
+		sparkVersion := "1.5.2",
 		scalaVersion := "2.11.8",
 		crossScalaVersions := Seq("2.10.6", "2.11.8"),
+		spIncludeMaven := true,
+		spIgnoreProvided := true, // override spark-packages dependency management
+		spAppendScalaVersion := true,
+		spName := "hindog/spark-mergejoin",
+		credentials += Credentials(Path.userHome / ".ivy2" / ".sbtcredentials"),
+		licenses += "Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0"),
 		releaseCrossBuild := true,
 		releaseVersionBump := sbtrelease.Version.Bump.Bugfix,
 		releasePublishArtifactsAction := PgpKeys.publishSigned.value,
-		javacOptions ++= Seq("-Xlint:unchecked", "-source", "1.7", "-target", "1.7"),
+		javacOptions ++= Seq("-Xlint:unchecked", "-source", "1.8", "-target", "1.7"),
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-target:jvm-1.7", "-feature", "-language:_"),
 		testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oF"),
 		libraryDependencies ++= Seq(
-			"org.apache.spark" %% "spark-core" % sparkVersion % "provided",
+			"org.apache.spark" %% "spark-core" % sparkVersion.value % "provided",
 			"org.scalatest" %% "scalatest" % "2.2.6" % "test",
-			"org.apache.spark" %% "spark-core" % sparkVersion % "test" classifier "tests"
+			"org.apache.spark" %% "spark-core" % sparkVersion.value % "test" classifier "tests"
 		),
 		autoAPIMappings := true,
 		publishMavenStyle := true,
