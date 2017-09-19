@@ -35,16 +35,17 @@ This library provides complementary merge-join operators for each of the built-i
 
 ## Requirements
 
-This library has different versions based on the Spark version used due to changes in the internals of Spark between these versions.  It is also cross-published for Scala 2.10, so 2.10 users should replace 2.11 with 2.10 in the commands listed below.
+This library has different versions based on the Spark version used due to changes in the internals of Spark between these versions.  It is also cross-published for Scala 2.10.
 
-| Spark Version | Merge-Join Version |
+| Spark Version* | Merge-Join Version |
 |---------------|-----------------|
-| 2.0.x | 2.0.1 |
+| 2.x | 2.0.1 |
 | 1.6.x | 1.6.1 |
 | 1.5.x | 1.5.1 |
 
+\* Has been currently tested up to Spark 2.2.0
 
-### For Spark 2.0
+### For Spark 2.x
 
 Using SBT:
 
