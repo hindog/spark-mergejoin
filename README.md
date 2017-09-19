@@ -43,7 +43,7 @@ This library has different versions based on the Spark version used due to chang
 | 1.6.x | 1.6.1 |
 | 1.5.x | 1.5.1 |
 
-\* Has been currently tested up to Spark 2.2.0
+\* Currently tested up to Spark 2.2.0
 
 ### For Spark 2.x
 
